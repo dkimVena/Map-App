@@ -9,6 +9,7 @@ class InfoCard extends Component {
 
   render() {
     const { className, country } = this.props;
+    console.log(country);
 
     return (
       <figure className={classNames('InfoCard', className)}>

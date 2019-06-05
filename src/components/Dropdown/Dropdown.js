@@ -23,13 +23,13 @@ class Dropdown extends Component {
 
   selectOption = option => {
     this.setState({ selected: option.name });
+    this.props.onSelect(option);
   };
 
   renderOptions = () => {
     const { options } = this.props;
-
     return options.map(option => (
-      <li key={option.key} onClick={() => this.selectOption(option)}>
+      <li key={option.code} onClick={() => this.selectOption(option)}>
         {option.name}
       </li>
     ));

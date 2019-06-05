@@ -1,0 +1,35 @@
+@import '../variables';
+
+.container {
+  display: flex;
+
+  .sidePanel {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    border-right: 0.5rem solid $color-grey-dark;
+    width: 100%;
+    padding-right: 2rem;
+
+    &__option {
+      border-bottom: 0.5rem solid $color-grey-dark;
+      padding-bottom: 2rem;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+
+    &__dropdown {
+      margin: 2rem 2rem 5rem 2rem;
+    }
+
+    &__info {
+      padding-top: 4rem;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+}
