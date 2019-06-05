@@ -1,0 +1,76 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import '../../variables';
+
+.InfoCard {
+  position: relative;
+  margin: 1rem;
+  min-width: 22rem;
+  max-width: 32rem;
+  width: 100%;
+  text-align: left;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  display: flex;
+
+  .flag-image {
+    width: 26%;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 3rem;
+  }
+
+  .flag-image span {
+    font-size: 8rem;
+    display: block;
+  }
+
+  figcaption {
+    width: 70%;
+    background-color: $color-grey-dark;
+    color: $color-white;
+    padding: 2.5rem;
+    display: inline-block;
+    margin-left: 4%;
+    border-radius: 0.5rem;
+
+    .icon {
+      font-size: 2rem;
+    }
+  }
+
+  figcaption:after {
+    content: '';
+    position: absolute;
+    right: 70%;
+    top: 3rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1rem 1rem 1rem 0;
+    border-color: transparent $color-grey-dark transparent transparent;
+  }
+
+  h3,
+  h4,
+  p {
+    margin: 0 0 0.5rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.7rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+
+  h4 {
+    color: $color-primary;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.9;
+  }
+}
