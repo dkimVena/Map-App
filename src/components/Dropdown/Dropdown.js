@@ -7,6 +7,12 @@ import './Dropdown.scss';
 class Dropdown extends Component {
   state = { open: false, selected: this.props.title };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.options !== this.props.options) {
+      this.setState({ selected: this.props.title });
+    }
+  }
+
   openDropdownMenu = event => {
     event.preventDefault();
 
@@ -30,6 +36,7 @@ class Dropdown extends Component {
     const { options } = this.props;
     return options.map(option => (
       <li key={option.code} onClick={() => this.selectOption(option)}>
+        {option.emoji}
         {option.name}
       </li>
     ));

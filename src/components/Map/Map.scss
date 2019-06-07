@@ -1,0 +1,28 @@
+@import '../../variables';
+@import '../../mixins';
+
+.map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @include respond(tab-port) {
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
+
+  .buttons {
+    .btn {
+      font-size: 2rem;
+      background-color: $color-primary;
+      border-radius: 50rem;
+      padding: 1.2rem;
+      margin: 1rem;
+      color: $color-white;
+      cursor: pointer;
+      box-shadow: 0 0.5rem 4rem rgba($color-black, 0.15);
+    }
+  }
+}
