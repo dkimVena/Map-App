@@ -6,6 +6,7 @@ import {
   Geography
 } from 'react-simple-maps';
 import { Motion, spring } from 'react-motion';
+import ReactTooltip from 'react-tooltip';
 import { scaleLinear } from 'd3-scale';
 
 import mapData from '../../static/map.json';
@@ -29,6 +30,12 @@ class Map extends Component {
     country: {},
     mapChange: false
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      ReactTooltip.rebuild();
+    }, 100);
+  }
 
   componentDidUpdate(previousProps, previousState) {
     if (previousProps.country.code !== this.props.country.code) {
@@ -93,7 +100,7 @@ class Map extends Component {
               height={551}
               style={{
                 width: '100%',
-                height: 'auto'
+                height: '90%'
               }}
             >
               <ZoomableGroup center={[x, y]} zoom={zoom}>
@@ -111,7 +118,14 @@ class Map extends Component {
                           <Geography
                             key={i}
                             geography={geography}
+                            data-tip={geography.properties.NAME}
                             cacheId={geography.properties.ISO_A2}
+                            onClick={() => {
+                              this.props.onSelectCountry({
+                                code: geography.properties.ISO_A2,
+                                continent: geography.properties.CONTINENT
+                              });
+                            }}
                             projection={projection}
                             style={{
                               default: {
@@ -143,6 +157,7 @@ class Map extends Component {
             </ComposableMap>
           )}
         </Motion>
+        <ReactTooltip />
       </div>
     );
   }

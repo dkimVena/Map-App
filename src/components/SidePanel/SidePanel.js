@@ -11,13 +11,22 @@ class SidePanel extends Component {
     selectedCountries: [],
     selectedCountry: {}
   };
+
+  componentDidUpdate(previousProps, previousState) {
+    if (previousProps.selectedCountry !== this.props.selectedCountry) {
+      this.setState({ selectedCountry: this.props.selectedCountry });
+    }
+
+    if (previousProps.selectedCountries !== this.props.selectedCountries) {
+      this.setState({ selectedCountries: this.props.selectedCountries });
+    }
+  }
   selectContinent = continent => {
-    this.setState({ selectedCountries: continent.countries });
+    this.props.onSelectContinent(continent);
   };
 
   selectedCountry = country => {
-    this.setState({ selectedCountry: country });
-    this.props.onSelect(country);
+    this.props.onSelectCountry(country);
   };
   render() {
     const { continents } = this.props;

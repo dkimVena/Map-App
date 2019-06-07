@@ -3,10 +3,11 @@
 .mainPanel {
   display: flex;
   height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
 
   @include respond(tab-port) {
-    height: 45%;
+    height: 55%;
   }
 }

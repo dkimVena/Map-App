@@ -25,7 +25,10 @@ class MainPanel extends Component {
   render() {
     return (
       <div className={classNames('mainPanel')}>
-        <Map country={this.getCountryLocation(this.props.selectedCountry)} />
+        <Map
+          country={this.getCountryLocation(this.props.selectedCountry)}
+          onSelectCountry={this.props.onSelectCountry}
+        />
       </div>
     );
   }
