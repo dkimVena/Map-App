@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './Dropdown.scss';
 
 class Dropdown extends Component {
-  state = { open: false, selected: this.props.title };
+  state = { open: false, selected: this.props.title, cursor: 0 };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.options !== this.props.options) {
@@ -33,9 +33,13 @@ class Dropdown extends Component {
   };
 
   renderOptions = () => {
-    const { options } = this.props;
-    return options.map(option => (
-      <li key={option.code} onClick={() => this.selectOption(option)}>
+    const { options, cursor } = this.props;
+    return options.map((option, i) => (
+      <li
+        className={cursor === i ? 'active' : null}
+        key={option.code}
+        onClick={() => this.selectOption(option)}
+      >
         {option.emoji}
         {option.name}
       </li>
@@ -48,7 +52,11 @@ class Dropdown extends Component {
 
     return (
       <div className={classNames('dropdown', className)}>
-        <div className="dropdown--button" onClick={this.openDropdownMenu}>
+        <div
+          className="dropdown--button"
+          onClick={this.openDropdownMenu}
+          tabIndex="0"
+        >
           {selected}
         </div>
 

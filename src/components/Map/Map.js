@@ -67,6 +67,17 @@ class Map extends Component {
       zoom: 1
     });
   };
+  enterPressed = (event, data) => {
+    var code = event.keyCode || event.which;
+
+    if (code === 13) {
+      this.props.onSelectCountry({
+        code: data.code,
+        continent: data.continent
+      });
+    }
+  };
+
   render() {
     return (
       <div className="map">
@@ -120,6 +131,12 @@ class Map extends Component {
                             geography={geography}
                             data-tip={geography.properties.NAME}
                             cacheId={geography.properties.ISO_A2}
+                            onKeyPress={event =>
+                              this.enterPressed(event, {
+                                code: geography.properties.ISO_A2,
+                                continent: geography.properties.CONTINENT
+                              })
+                            }
                             onClick={() => {
                               this.props.onSelectCountry({
                                 code: geography.properties.ISO_A2,
