@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import './mixins';
-
 *,
 *::after,
 *::before {
@@ -11,8 +10,7 @@
 }
 
 html {
-  // This defines what 1rem is
-  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  font-size: 62.5%;
   font-family: 'Open Sans', Arial, sans-serif;
 
   @include respond(tab-land) {

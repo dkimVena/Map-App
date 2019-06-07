@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .background {
   width: 100%;
   height: 95vh;
@@ -18,10 +20,10 @@
       width: 8.5rem;
       height: 8.5rem;
       margin: 0.6rem;
-      border: 0.6rem solid #fdd;
+      border: 0.6rem solid $color-primary;
       border-radius: 50%;
       animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-      border-color: #fdd transparent transparent transparent;
+      border-color: $color-primary transparent transparent transparent;
     }
 
     div:nth-child(1) {
