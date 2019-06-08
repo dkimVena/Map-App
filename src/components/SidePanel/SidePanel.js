@@ -29,11 +29,11 @@ class SidePanel extends Component {
     this.props.onSelectCountry(country);
   };
   render() {
-    const { continents } = this.props;
+    const { continents, className } = this.props;
     const { selectedCountries, selectedCountry } = this.state;
 
     return (
-      <div className={classNames('sidePanel')}>
+      <div className={classNames('sidePanel', className)}>
         <div className={classNames('sidePanel__option')}>
           <Dropdown
             className={classNames('sidePanel__dropdown')}

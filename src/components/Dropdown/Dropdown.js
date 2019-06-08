@@ -53,7 +53,7 @@ class Dropdown extends Component {
     return (
       <div className={classNames('dropdown', className)}>
         <div
-          className="dropdown--button"
+          className={classNames('dropdown--button')}
           onClick={this.openDropdownMenu}
           tabIndex="0"
         >

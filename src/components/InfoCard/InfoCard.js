@@ -12,7 +12,7 @@ class InfoCard extends Component {
 
     return (
       <figure className={classNames('InfoCard', className)}>
-        <div className="flag-image">
+        <div className={classNames('flag-image')}>
           <span>{country.emoji}</span>
         </div>
         <figcaption>
@@ -20,13 +20,15 @@ class InfoCard extends Component {
           <h4>{country.native}</h4>
           <p>{country.code}</p>
           <p>
-            <i className="icon ion-ios-telephone" />: +{country.phone}
+            <i className={classNames('icon ion-ios-telephone')} />: +
+            {country.phone}
           </p>
           <p>
-            <i className="icon ion-social-usd" />: {country.currency}
+            <i className={classNames('icon ion-social-usd')} />:{' '}
+            {country.currency}
           </p>
           <p>
-            <i className="icon ion-chatbox-working" />:{' '}
+            <i className={classNames('icon ion-chatbox-working')} />:{' '}
             {this.getCountryLanguages(country.languages).join(', ')}
           </p>
         </figcaption>

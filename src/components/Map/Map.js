@@ -5,6 +5,7 @@ import {
   Geographies,
   Geography
 } from 'react-simple-maps';
+import classNames from 'classnames';
 import { Motion, spring } from 'react-motion';
 import ReactTooltip from 'react-tooltip';
 import { scaleLinear } from 'd3-scale';
@@ -79,16 +80,17 @@ class Map extends Component {
   };
 
   render() {
+    const { className } = this.props;
     return (
-      <div className="map">
-        <div className="buttons">
-          <button className="btn" onClick={this.handleZoomIn}>
+      <div className={classNames('map', className)}>
+        <div className={classNames('buttons')}>
+          <button className={classNames('btn')} onClick={this.handleZoomIn}>
             {'Zoom in'}
           </button>
-          <button className="btn" onClick={this.handleZoomOut}>
+          <button className={classNames('btn')} onClick={this.handleZoomOut}>
             {'Zoom out'}
           </button>
-          <button className="btn" onClick={this.handleReset}>
+          <button className={classNames('btn')} onClick={this.handleReset}>
             {'Reset'}
           </button>
         </div>

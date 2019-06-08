@@ -20,8 +20,8 @@ const getCountryLocation = country => {
   }
   return result;
 };
-const MainPanel = ({ onSelectCountry, selectedCountry }) => (
-  <div className={classNames('mainPanel')}>
+const MainPanel = ({ onSelectCountry, selectedCountry, className }) => (
+  <div className={classNames('mainPanel', className)}>
     <Map
       country={getCountryLocation(selectedCountry)}
       onSelectCountry={onSelectCountry}
