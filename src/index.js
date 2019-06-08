@@ -7,7 +7,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import { createHttpLink } from 'apollo-link-http';
 
 import Layout from './components/Layout';
-import App from './components/App';
+import App from './containers/App';
 
 import './index.scss';
 

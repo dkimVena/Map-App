@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Map App
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Component Guidlines](#component-guidlines)
+  - [1. File/Folder Structure](#1-file-folder-structure)
+- [Github instructions](#github-instructions)
+  - [1. Setup Local Repository](#1-setup-local-repository)
+  - [2. Workflow](#2-setup-docker)
+  - [3. Branch Naming](#3-testing)
+- [Document](#document)
+  - [1. Used Library](#1-used-library)
 
-### `npm start`
+## Component Guidlines
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. File/Folder Structure
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```files
+src/components
+├── ComponentName
+│ ├── ComponentName.js — block ComponentName
+│ ├── ComponentName.scss — visual styles
+│ └── index.js — export file
+```
 
-### `npm test`
+## Instructions
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Setup Local Repository
 
-### `npm run build`
+```git
+git clone https://github.com/goginim/map-app
+cd map-app
+npm i
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Setup Docker
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- docker build -t map-app .
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- docker run -it -p 8080:80 map-app
 
-### `npm run eject`
+### 3. Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- npm run cypress
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Document
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 1. Used Library
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- For GraphQL
 
-## Learn More
+  - apollo-boost
+  - apollo-cache-inmemory
+  - apollo-link-http
+  - graphql
+  - react-apollo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- For Map
+  - d3-scale
+  - react-motion
+  - react-simple-maps
+  - react-tooltip
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Q1. How did you decide on the technical and architectural choices used as part of your solution?
 
-### Code Splitting
+- The structure should be simple to make easy for new team member getting onboard and diving into the project
+- Each component has a separate folder. The name of the folder and the name of the component file should preferably be identical. By using this way, the developer doesn't get a list of index.js file but the actual component files when developer search for files.
+- Also, each component folders have index.js file to make importing the component easier.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Q2. Are there any improvements you could make to the final piece?
 
-### Analyzing the Bundle Size
+- A feature for changing section size can be an improvement because the application can show a bigger map section or bigger information section depending on the user's preference.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Q3. What would you do differently if you had more time?
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- If I had more time, I would add more features to register, login, save the country list and take memo for each country. By using those features, it can be a simple travel tracking application. So, users can take a memo for each country before and after travel. It will be awesome!

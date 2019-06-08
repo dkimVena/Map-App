@@ -2,9 +2,9 @@ import React from 'react';
 
 import classNames from 'classnames';
 import { graphql } from 'react-apollo';
-import SidePanel from './SidePanel';
-import MainPanel from './MainPanel';
-import LoadingSpinner from './LoadingSpinner';
+import SidePanel from '../components/SidePanel';
+import MainPanel from '../components/MainPanel';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 import query from '../queries/fetchContinents';
 
