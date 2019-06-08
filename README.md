@@ -10,6 +10,7 @@
   - [3. Branch Naming](#3-testing)
 - [Document](#document)
   - [1. Used Library](#1-used-library)
+- [Questions](#questions)
 
 ## Component Guidlines
 
@@ -28,8 +29,8 @@ src/components
 ### 1. Setup Local Repository
 
 ```git
-git clone https://github.com/goginim/map-app
-cd map-app
+git clone https://github.com/goginim/Map-App.git
+cd Map-App
 npm i
 ```
 
@@ -60,6 +61,8 @@ npm i
   - react-motion
   - react-simple-maps
   - react-tooltip
+
+## Questions
 
 ### Q1. How did you decide on the technical and architectural choices used as part of your solution?
 
